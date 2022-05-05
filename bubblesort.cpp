@@ -9,32 +9,36 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void bubblesort(int arr[], int num)
 {
-  int n, i, j, temp;
-
-  cout << "Insert the number of elements:\n";
-  cin >> n;
-  int a[n];
-
-  cout << "Insert array elements:\n";
-  for (i = 0; i < n; i++)
-    cin >> a[i];
-
-  for (j = 0; j < n - 1; j++)
-    for (i = 0; i < n - 1; i++)
-      if (a[i] > a[i + 1])
+    int i, j, temp;
+    for (j = 0; j < num - 1; j++)
+    for (i = 0; i < num - 1; i++)
+      if (arr[i] > arr[i + 1])
       {
-        temp = a[i];
-        a[i] = a[i + 1];
-	a[i + 1] = temp;
+        temp = arr[i];
+        arr[i] = arr[i + 1];
+	arr[i + 1] = temp;
       }
 
-  cout << "Sorted array by bubble sort: ";
-  for (i = 0; i < n; i++)
-    cout << a[i] << " ";
+    cout << "Sorted array by bubble sort: ";
+    for (i = 0; i < num; i++)
+      cout << arr[i] << " ";
 
-  cout << endl;
+    cout << endl;
+}
 
+int main()
+{
+    int n;
+    cout << "Insert the number of elements:\n";
+    cin >> n;
+    int a[n];
+
+    cout << "Insert array elements:\n";
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
+
+    bubblesort(a, n);
   return 0;
 }
