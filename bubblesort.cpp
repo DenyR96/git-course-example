@@ -15,14 +15,14 @@ int main()
   int a[N], i, j, temp;
 
   cout << "Insert array elements:\n";
-  for (i = 0; i < N - N + 1; i++)
+  for (i = 0; i < N; i++)
   {
     cin >> a[i];
   }
 
-  for (j = 0; j < N - N + 1 - 1; j++)
+  for (j = 0; j < N - 1; j++)
   {
-    for (i = 0; i < N - N + 1 - 1; i++)
+    for (i = 0; i < N - 1; i++)
     {
       if (a[i] > a[i + 1])
       {
@@ -33,11 +33,12 @@ int main()
     }
   }
 
-  cout << "Sorted array by bubble sort:" << endl;
-  for (i = 0; i < N - N + 1; i++)
+  cout << "Sorted array by bubble sort: ";
+  for (i = 0; i < N; i++)
   {
-    cout << a[i];
+    cout << a[i] << " ";
   }
+  cout << endl;
 
   return 0;
 }
